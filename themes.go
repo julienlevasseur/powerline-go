@@ -127,6 +127,9 @@ type Theme struct {
 	PlEnvFg uint8
 	PlEnvBg uint8
 
+	ProfilerFg uint8
+	ProfilerBg uint8
+
 	TFWsFg uint8
 	TFWsBg uint8
 
@@ -144,8 +147,8 @@ type Theme struct {
 	NodeVersionFg uint8
 	NodeVersionBg uint8
 
-	RvmFg        uint8
-	RvmBg        uint8
+	RvmFg uint8
+	RvmBg uint8
 
 	LoadFg           uint8
 	LoadBg           uint8
@@ -161,6 +164,6 @@ type Theme struct {
 
 	ViModeCommandFg uint8
 	ViModeCommandBg uint8
-	ViModeInsertFg uint8
-	ViModeInsertBg uint8
+	ViModeInsertFg  uint8
+	ViModeInsertBg  uint8
 }

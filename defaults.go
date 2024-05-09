@@ -147,7 +147,7 @@ var defaults = Config{
 			EvalPromptRightSuffix: `"`,
 		},
 		"bare": {
-			ColorTemplate: "%s",
+			ColorTemplate:    "%s",
 			RootIndicator:    "$",
 			EscapedBackslash: `\`,
 			EscapedBacktick:  "`",
@@ -249,6 +249,9 @@ var defaults = Config{
 
 			PlEnvFg: 00,
 			PlEnvBg: 32,
+
+			ProfilerFg: 255,
+			ProfilerBg: 220,
 
 			TFWsFg: 15, // white
 			TFWsBg: 26, // blue
@@ -631,6 +634,9 @@ var defaults = Config{
 
 			PlEnvFg: 20, // a mid-tone blue
 			PlEnvBg: 15,
+
+			ProfilerFg: 255,
+			ProfilerBg: 220,
 
 			TimeFg: 236,
 			TimeBg: 15,
