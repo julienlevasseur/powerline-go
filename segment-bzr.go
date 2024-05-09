@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	pwl "github.com/justjanne/powerline-go/powerline"
 	"os/exec"
 	"strings"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func getBzrStatus() (bool, bool, bool) {

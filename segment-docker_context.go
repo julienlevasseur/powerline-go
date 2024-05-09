@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
-	pwl "github.com/justjanne/powerline-go/powerline"
-	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 type DockerContextConfig struct {
@@ -24,7 +24,7 @@ func segmentDockerContext(p *powerline) []pwl.Segment {
 	} else {
 		stat, err := os.Stat(contextFolder)
 		if err == nil && stat.IsDir() {
-			dockerConfigFile, err := ioutil.ReadFile(configFile)
+			dockerConfigFile, err := os.ReadFile(configFile)
 			if err == nil {
 				var dockerConfig DockerContextConfig
 				err = json.Unmarshal(dockerConfigFile, &dockerConfig)

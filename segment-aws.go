@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func segmentAWS(p *powerline) []pwl.Segment {
@@ -12,7 +12,7 @@ func segmentAWS(p *powerline) []pwl.Segment {
 	if profile == "" {
 		profile = os.Getenv("AWS_VAULT")
 		if profile == "" {
-			return []pwl.Segment{}	
+			return []pwl.Segment{}
 		}
 	}
 	var r string

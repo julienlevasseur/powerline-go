@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/justjanne/powerline-go/exitcode"
-	pwl "github.com/justjanne/powerline-go/powerline"
+	"github.com/julienlevasseur/powerline-go/exitcode"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 var exitCodes = map[int]string{

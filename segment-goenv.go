@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	pwl "github.com/justjanne/powerline-go/powerline"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 const goenvVersionFileSuffix = "/.go-version"
@@ -40,7 +40,7 @@ func checkForGoVersionFileInTree() (string, error) {
 	workingDirectory, err = os.Getwd()
 	if err == nil {
 		for workingDirectory != "/" {
-			goVersion, goVersionErr := ioutil.ReadFile(workingDirectory + goenvVersionFileSuffix)
+			goVersion, goVersionErr := os.ReadFile(workingDirectory + goenvVersionFileSuffix)
 			if goVersionErr == nil {
 				return strings.TrimSpace(string(goVersion)), nil
 			}
@@ -55,7 +55,7 @@ func checkForGoVersionFileInTree() (string, error) {
 // check for global version
 func checkForGoenvGlobalVersion() (string, error) {
 	homeDir, _ := os.UserHomeDir()
-	globalGoVersion, err := ioutil.ReadFile(homeDir + goenvGlobalVersionFileSuffix)
+	globalGoVersion, err := os.ReadFile(homeDir + goenvGlobalVersionFileSuffix)
 	if err == nil {
 		return strings.TrimSpace(string(globalGoVersion)), nil
 	} else {

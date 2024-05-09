@@ -4,11 +4,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 type alignment int
@@ -221,7 +220,7 @@ func main() {
 	})
 
 	if strings.HasSuffix(cfg.Theme, ".json") {
-		file, err := ioutil.ReadFile(cfg.Theme)
+		file, err := os.ReadFile(cfg.Theme)
 		if err == nil {
 			theme := cfg.Themes[defaults.Theme]
 			err = json.Unmarshal(file, &theme)
@@ -235,7 +234,7 @@ func main() {
 	}
 
 	if strings.HasSuffix(cfg.Mode, ".json") {
-		file, err := ioutil.ReadFile(cfg.Mode)
+		file, err := os.ReadFile(cfg.Mode)
 		if err == nil {
 			symbols := cfg.Modes[defaults.Mode]
 			err = json.Unmarshal(file, &symbols)

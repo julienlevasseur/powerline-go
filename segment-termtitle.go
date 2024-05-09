@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func segmentTermTitle(p *powerline) []pwl.Segment {

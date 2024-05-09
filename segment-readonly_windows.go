@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package main
@@ -5,7 +6,7 @@ package main
 import (
 	"os"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func segmentPerms(p *powerline) []pwl.Segment {

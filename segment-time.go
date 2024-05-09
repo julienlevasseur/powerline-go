@@ -2,8 +2,9 @@ package main
 
 import (
 	"strings"
-	pwl "github.com/justjanne/powerline-go/powerline"
 	"time"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func segmentTime(p *powerline) []pwl.Segment {

@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 type repoStats struct {
@@ -58,7 +58,7 @@ func addRepoStatsSymbol(nChanges int, symbol string, GitMode string) string {
 		if GitMode == "simple" {
 			return symbol
 		} else if GitMode == "compact" {
-			return fmt.Sprintf(" %d%s", nChanges, symbol )
+			return fmt.Sprintf(" %d%s", nChanges, symbol)
 		} else {
 			return symbol
 		}

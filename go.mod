@@ -3,7 +3,6 @@ module github.com/julienlevasseur/powerline-go
 go 1.15
 
 require (
-	github.com/justjanne/powerline-go v1.22.1
 	github.com/mattn/go-runewidth v0.0.9
 	github.com/shirou/gopsutil/v3 v3.22.3
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f

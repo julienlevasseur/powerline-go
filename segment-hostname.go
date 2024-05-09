@@ -2,10 +2,11 @@ package main
 
 import (
 	"crypto/md5"
-	pwl "github.com/justjanne/powerline-go/powerline"
 	"os"
 	"strconv"
 	"strings"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 func getHostName(fullyQualifiedDomainName string) string {

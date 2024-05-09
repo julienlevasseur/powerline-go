@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	pwl "github.com/justjanne/powerline-go/powerline"
-	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 
 	"gopkg.in/yaml.v2"
 )
@@ -38,7 +38,7 @@ func readKubeConfig(config *KubeConfig, path string) (err error) {
 	if err != nil {
 		return
 	}
-	fileContent, err := ioutil.ReadFile(absolutePath)
+	fileContent, err := os.ReadFile(absolutePath)
 	if err != nil {
 		return
 	}

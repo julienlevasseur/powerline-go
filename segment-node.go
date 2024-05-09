@@ -2,12 +2,11 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 const pkgfile = "./package.json"
@@ -33,7 +32,7 @@ func getPackageVersion() string {
 		return ""
 	}
 	pkg := packageJSON{""}
-	raw, err := ioutil.ReadFile(pkgfile)
+	raw, err := os.ReadFile(pkgfile)
 	if err != nil {
 		return ""
 	}

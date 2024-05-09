@@ -2,13 +2,12 @@ package main
 
 import (
 	"errors"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 const rubyVersionFileSuffix = "/.ruby-version"
@@ -39,7 +38,7 @@ func checkForRubyVersionFileInTree() (string, error) {
 	workingDirectory, err = os.Getwd()
 	if err == nil {
 		for workingDirectory != "/" {
-			rubyVersion, rubyVersionErr := ioutil.ReadFile(workingDirectory + rubyVersionFileSuffix)
+			rubyVersion, rubyVersionErr := os.ReadFile(workingDirectory + rubyVersionFileSuffix)
 			if rubyVersionErr == nil {
 				return strings.TrimSpace(string(rubyVersion)), nil
 			}
@@ -54,7 +53,7 @@ func checkForRubyVersionFileInTree() (string, error) {
 // check for global version
 func checkForGlobalVersion() (string, error) {
 	homeDir, _ := os.UserHomeDir()
-	globalRubyVersion, err := ioutil.ReadFile(homeDir + globalVersionFileSuffix)
+	globalRubyVersion, err := os.ReadFile(homeDir + globalVersionFileSuffix)
 	if err != nil {
 		return "", errors.New("No global version file found in tree")
 	}

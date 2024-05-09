@@ -3,14 +3,13 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"runtime"
 	"strings"
 
-	pwl "github.com/justjanne/powerline-go/powerline"
+	pwl "github.com/julienlevasseur/powerline-go/powerline"
 )
 
 const gcloudCoreSectionHeader = "\n[core]\n"
@@ -37,7 +36,7 @@ func getActiveGCloudConfig(configDir string) (string, error) {
 		return "", err
 	}
 
-	contents, err := ioutil.ReadFile(activeConfigPath)
+	contents, err := os.ReadFile(activeConfigPath)
 	if err != nil {
 		return "", err
 	}
@@ -78,7 +77,7 @@ func getGCPProjectFromFile() (string, error) {
 		return "", fmt.Errorf("%s is a directory", configPath)
 	}
 
-	b, err := ioutil.ReadFile(configPath)
+	b, err := os.ReadFile(configPath)
 	if err != nil {
 		return "", err
 	}
