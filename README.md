@@ -16,17 +16,27 @@ Ported to golang by @justjanne.
 
 **Table of Contents**
 
-- [Version Control](#version-control)
-- [Installation](#installation)
-  - [Precompiled Binaries](#precompiled-binaries)
-  - [Other Platforms](#other-platforms)
-  - [Bash](#bash)
-  - [ZSH](#zsh)
-  - [Fish](#fish)
-  - [Nix](#nix)
-  - [PowerShell](#powershell)
-- [Customization](#customization)
-- [License](#license)
+- [A Powerline style prompt for your shell](#a-powerline-style-prompt-for-your-shell)
+  - [Version Control](#version-control)
+  - [Installation](#installation)
+    - [Precompiled Binaries](#precompiled-binaries)
+    - [Other Platforms](#other-platforms)
+    - [Bash](#bash)
+    - [ZSH](#zsh)
+    - [Fish](#fish)
+    - [Nix](#nix)
+    - [Powershell](#powershell)
+  - [Customization](#customization)
+    - [Eval](#eval)
+        - [Bash](#bash-1)
+        - [ZSH](#zsh-1)
+        - [Fish](#fish-1)
+    - [Path Aliases](#path-aliases)
+    - [Duration](#duration)
+      - [Bash](#bash-2)
+      - [Zsh](#zsh-2)
+      - [Fish](#fish-2)
+  - [License](#license)
 
 ## Version Control
 
@@ -352,7 +362,7 @@ terminal width, even when some portions are replaced by an ellipsis.
 For example, you might want to replace the string `$GOPATH/src/github.com` with
 `@GOPATH-GH`. When you're in a directory like
 `$GOPATH/src/github.com/julienlevasseur/powerline-go`, you'll instead see `@GOPATH-GH >
-justjanne > powerline-go` in the shell prompt.
+julienlevasseur > powerline-go` in the shell prompt.
 
 Aliases are defined as comma-separated key value pairs, like this:
 
