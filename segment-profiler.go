@@ -7,7 +7,7 @@ import (
 )
 
 func segmentProfiler(p *powerline) []pwl.Segment {
-	profileName, _ := os.LookupEnv("profile_name")
+	profileName := os.Getenv("profile_name")
 	if profileName == "" {
 		return []pwl.Segment{}
 	}

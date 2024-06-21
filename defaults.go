@@ -250,7 +250,7 @@ var defaults = Config{
 			PlEnvFg: 00,
 			PlEnvBg: 32,
 
-			ProfilerFg: 255,
+			ProfilerFg: 233,
 			ProfilerBg: 220,
 
 			TFWsFg: 15, // white
