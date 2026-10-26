@@ -20,6 +20,7 @@ Ported to golang by @justjanne.
   - [Version Control](#version-control)
   - [Installation](#installation)
     - [Precompiled Binaries](#precompiled-binaries)
+    - [Ubuntu (system-wide)](#ubuntu-system-wide)
     - [Other Platforms](#other-platforms)
     - [Bash](#bash)
     - [ZSH](#zsh)
@@ -76,6 +77,51 @@ Alternatively you can use "compatible" or "flat" mode.
 
 I provide precompiled binaries for x64 Linux and macOS in the
 [releases tab](https://github.com/julienlevasseur/powerline-go/releases)
+
+### Ubuntu (system-wide)
+
+`scripts/install-ubuntu.sh` installs `powerline-go` for every user and every
+shell on an Ubuntu machine. It:
+
+- installs `curl`, `ca-certificates` and `fonts-powerline` with `apt`,
+- downloads the release binary matching the machine architecture (amd64,
+  arm64, armhf or i386), verifies it against the release `checksums.txt` and
+  installs it to `/usr/local/bin/powerline-go`,
+- enables the prompt system-wide:
+  - **bash**: sources `/etc/powerline-go/powerline-go.bash` from `/etc/bash.bashrc`,
+  - **zsh**: sources `/etc/powerline-go/powerline-go.zsh` from `/etc/zsh/zshrc`
+    (if zsh is installed),
+  - **fish**: writes `/etc/fish/conf.d/powerline-go.fish` (if fish is installed).
+
+Run it as root:
+
+```bash
+curl -fsSLO https://raw.githubusercontent.com/julienlevasseur/powerline-go/main/scripts/install-ubuntu.sh
+sudo bash install-ubuntu.sh
+```
+
+Options:
+
+| Option              | Description                                          |
+| ------------------- | ---------------------------------------------------- |
+| `-v`, `--version`   | Install a specific release (e.g. `-v v1.26`) instead of the latest |
+| `--no-shells`       | Only install the binary, do not configure any shell  |
+| `--no-fonts`        | Do not install the `fonts-powerline` package         |
+| `--uninstall`       | Remove the binary and all shell hooks                |
+| `-h`, `--help`      | Show usage                                           |
+
+The script can be re-run safely, to upgrade or change the version for example.
+The prompt is not enabled on the Linux text console (`TERM=linux`).
+
+Each user can tune the system-wide prompt with environment variables:
+
+- `POWERLINE_GO_DISABLE=1` disables the powerline-go prompt for that user. It
+  must be exported before the system rc file runs, e.g. in `~/.profile` (or
+  `~/.zshenv` for zsh).
+- `POWERLINE_GO_ARGS` adds arguments to `powerline-go`, for example
+  `POWERLINE_GO_ARGS="-theme gruvbox -modules cwd,git,exit"`. It is read at
+  every prompt, so it can also be set in `~/.bashrc`, `~/.zshrc` or
+  `~/.config/fish/config.fish`.
 
 ### Other Platforms
 
