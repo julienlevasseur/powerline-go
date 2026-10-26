@@ -79,6 +79,15 @@ I provide precompiled binaries for x64 Linux and macOS in the
 
 ### Other Platforms
 
+Dependencies:
+
+```bash
+sudo apt install libc6-dev
+
+# Or install the full toolchain, which includes libc6-dev, make and g++:
+sudo apt install build-essential
+```
+
 - Install (and update) the package with
 
 ```bash
